@@ -8,7 +8,7 @@
 import Foundation
 
 func evenNumbers(_ number: Int, _ divider: Int) -> Bool{
-    return (number % divider == 0 ?     true : false)
+    return (number % divider == 0 ? true : false)
 }
 
 func createdArr(_ numberLeght: Int) -> [Int] {
@@ -45,11 +45,47 @@ func numberFibonachi(_ namberLenght: Int) -> [Float80] {
     return newArr
 }
 
+func сheckTheNumber(_ i: Int,_ newArr: [Float80]) -> Bool{
+    if !newArr.isEmpty {
+        for (_ , value) in newArr.enumerated(){
+            if evenNumbers(i, Int(value)) {
+                return false
+            }
+        }
+    }
+    return true
+}
+
+func simpleNumber(_ namberLenght: Int)-> [Float80] {
+    var newArr = [Float80]()
+
+    newArr.append(Float80(2))
+    
+    while Int(newArr.count) < namberLenght {
+        for i in (Int(newArr.count) <= 2 ? 3...5 : Int(newArr.count)...Int(pow(Double(newArr.count),Double(newArr.count))))
+                    where  сheckTheNumber(i, newArr) {
+                newArr.append(Float80(i))
+            if Int(newArr.count) == namberLenght {
+                return newArr
+            }
+        }
+    }
+    
+    
+    
+//    for i in 2...(namberLenght + 2) where сheckTheNumber(i, newArr) {
+//        newArr.append(Float80(i))
+//    }
+
+    return newArr
+}
+
 print(evenNumbers(3,3))
 var arrnumber: [Int] = createdArr(10)
 print(arrnumber)
 print(arrDelite(&arrnumber,2,3))
 print(numberFibonachi(100))
+print(simpleNumber(600))
 
 
 
