@@ -70,12 +70,6 @@ func simpleNumber(_ namberLenght: Int)-> [Float80] {
             }
         }
     }
-    
-    
-    
-//    for i in 2...(namberLenght + 2) where сheckTheNumber(i, newArr) {
-//        newArr.append(Float80(i))
-//    }
 
     return newArr
 }
