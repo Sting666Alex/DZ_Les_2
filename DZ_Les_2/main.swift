@@ -81,5 +81,7 @@ print(arrDelite(&arrnumber,2,3))
 print(numberFibonachi(100))
 print(simpleNumber(600))
 
+//comment
+
 
 
